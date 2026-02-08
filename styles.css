@@ -63,8 +63,9 @@ button:focus-visible {
 }
 
 .container {
-  width: min(1100px, 90vw);
+  width: min(1040px, 85vw);
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .skip-link {
@@ -109,13 +110,15 @@ button:focus-visible {
 }
 
 .page-surface {
-  width: min(1100px, calc(100% - 384px));
+  width: min(1100px, calc(100% - 150px));
   margin: 0 auto;
   background: var(--cream);
+  border: 5px solid #d4af37;
   box-shadow:
     0 20px 50px rgba(59, 42, 31, 0.18),
-    -40px 0 70px rgba(247, 239, 226, 0.7),
-    40px 0 70px rgba(247, 239, 226, 0.7);
+    -30px 0 50px rgba(247, 239, 226, 0.7),
+    30px 0 50px rgba(247, 239, 226, 0.7),
+    inset 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 .site-header {
@@ -425,6 +428,161 @@ main {
   font-size: 15px;
 }
 
+.order-list-container {
+  max-height: 500px;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--deep-red) var(--cream-deep);
+}
+
+.order-list-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.order-list-container::-webkit-scrollbar-track {
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+.order-list-container::-webkit-scrollbar-thumb {
+  background: var(--deep-red);
+  border-radius: 10px;
+}
+
+.order-list-container::-webkit-scrollbar-thumb:hover {
+  background: var(--soft-pink);
+}
+
+.order-item {
+  background: var(--cream-deep);
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  border: 2px solid var(--cream);
+  box-shadow: 0 6px 12px rgba(59, 42, 31, 0.06);
+  transition: all 0.2s ease;
+}
+
+.order-item:hover {
+  box-shadow: 0 10px 20px rgba(59, 42, 31, 0.12);
+  border-color: var(--deep-red);
+}
+
+.order-item:last-child {
+  margin-bottom: 0;
+}
+
+.order-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.order-item h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text);
+}
+
+.order-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.order-item p {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.order-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.quantity-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.quantity-input {
+  width: 70px;
+  padding: 8px 10px;
+  border: 2px solid var(--cream-deep);
+  border-radius: 8px;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.quantity-input:hover {
+  border-color: var(--deep-red);
+}
+
+.quantity-input:focus-visible {
+  outline: 3px solid var(--deep-red);
+  outline-offset: 2px;
+  border-color: var(--deep-red);
+}
+
+.order-button {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--deep-red);
+  color: var(--white);
+  border: none;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.order-button:hover,
+.order-button:focus-visible {
+  background: var(--soft-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 42, 31, 0.15);
+}
+
+.submit-order-button {
+  width: 100%;
+  padding: 16px 24px;
+  margin-top: 24px;
+  border-radius: 999px;
+  background: var(--deep-red);
+  color: var(--white);
+  border: none;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(59, 42, 31, 0.15);
+}
+
+.submit-order-button:hover,
+.submit-order-button:focus-visible {
+  background: #fce4ec;
+  color: var(--text);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(59, 42, 31, 0.25);
+}
+
 @media (max-width: 900px) {
   .site-title {
     text-align: center;
@@ -464,5 +622,23 @@ main {
   .testimonial-photo {
     width: 64px;
     height: 64px;
+  }
+
+  .order-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quantity-label {
+    justify-content: center;
+  }
+
+  .order-button {
+    width: 100%;
+  }
+
+  .submit-order-button {
+    font-size: 20px;
+    padding: 14px 20px;
   }
 }
