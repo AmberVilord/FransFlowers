@@ -304,6 +304,11 @@ main {
   order: 1;
 }
 
+.smaller-image {
+  width: 66.67%;
+  margin: 0 auto;
+}
+
 .fun-detail {
   font-weight: 600;
   color: var(--deep-red);
