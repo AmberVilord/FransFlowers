@@ -203,6 +203,17 @@ main {
   padding-right: 29px;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.contact-highlight {
+  margin: 0;
+}
+
 .section-body p {
   margin: 0 0 16px;
 }
@@ -274,6 +285,23 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
   gap: 22px;
   align-items: center;
+  margin-bottom: 32px;
+}
+
+.seasonal:last-child {
+  margin-bottom: 0;
+}
+
+.seasonal.reverse {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+}
+
+.seasonal.reverse img {
+  order: 2;
+}
+
+.seasonal.reverse div {
+  order: 1;
 }
 
 .fun-detail {
