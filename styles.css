@@ -31,6 +31,20 @@ body {
   background: transparent;
 }
 
+body.accessibility-mode {
+  font-family: "Atkinson Hyperlegible", "Cormorant Garamond", "Times New Roman",
+    serif;
+  font-size: 20px;
+}
+
+body.accessibility-mode .site-title,
+body.accessibility-mode .section-banner h2 {
+  font-family: "Atkinson Hyperlegible", "Cormorant Garamond", "Times New Roman",
+    serif;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -66,6 +80,30 @@ button:focus-visible {
 
 .skip-link:focus {
   top: 16px;
+}
+
+.accessibility-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 2px solid var(--cream-deep);
+  background: var(--deep-red);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(59, 42, 31, 0.18);
+  z-index: 1000;
+}
+
+.accessibility-toggle:hover,
+.accessibility-toggle:focus-visible {
+  background: var(--accent);
 }
 
 .page-surface {
@@ -222,7 +260,7 @@ main {
 }
 
 .footer-brand {
-  padding-left: 15px;
+  padding-left: 30px;
 }
 
 .site-footer h3 {

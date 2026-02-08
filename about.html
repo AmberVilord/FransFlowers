@@ -10,10 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <button class="accessibility-toggle" type="button" aria-pressed="false">
+      A+
+    </button>
     <div class="page-surface">
       <header class="site-header">
         <div class="container">
@@ -52,7 +59,7 @@
         </div>
         <div class="section-body seasonal">
           <img
-            src="assets/seasonal-picks.svg"
+            src="https://www.shutterstock.com/image-photo/group-tulips-apricot-impression-600nw-1082379971.jpg"
             alt="Illustration of a fresh bouquet"
           />
           <div>
@@ -80,12 +87,51 @@
             <a href="about.html" aria-current="page">About Fran</a>
           </nav>
           <div class="social-links" aria-label="Social media">
-            <span class="social-icon" aria-hidden="true">FB</span>
-            <span class="social-icon" aria-hidden="true">IG</span>
-            <span class="social-icon" aria-hidden="true">PT</span>
+            <a
+              class="social-icon"
+              href="https://www.facebook.com/amber.dawdy.75/"
+              aria-label="Facebook"
+            >
+              FB
+            </a>
+            <a
+              class="social-icon"
+              href="https://github.com/AmberVilord/my-site"
+              aria-label="GitHub"
+            >
+              GH
+            </a>
+            <a
+              class="social-icon"
+              href="mailto:MrsVilord@gmail.com"
+              aria-label="Email"
+            >
+              Email
+            </a>
           </div>
         </div>
       </footer>
     </div>
+    <script>
+      (() => {
+        const toggle = document.querySelector(".accessibility-toggle");
+        if (!toggle) return;
+
+        const applyState = (enabled) => {
+          document.body.classList.toggle("accessibility-mode", enabled);
+          toggle.setAttribute("aria-pressed", String(enabled));
+          toggle.textContent = enabled ? "A-" : "A+";
+        };
+
+        const stored = localStorage.getItem("ff-accessibility");
+        applyState(stored === "on");
+
+        toggle.addEventListener("click", () => {
+          const enabled = !document.body.classList.contains("accessibility-mode");
+          applyState(enabled);
+          localStorage.setItem("ff-accessibility", enabled ? "on" : "off");
+        });
+      })();
+    </script>
   </body>
 </html>
