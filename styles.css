@@ -131,8 +131,17 @@ button:focus-visible {
   font-family: "Great Vibes", "Times New Roman", serif;
   font-size: clamp(48px, 6vw, 72px);
   font-weight: 400;
-  margin: 0 0 12px;
+  margin: 0 0 0;
   text-align: center;
+}
+
+.site-tagline {
+  font-family: "Great Vibes", "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: -30px 0 24px;
+  text-align: center;
+  color: inherit;
 }
 
 .site-nav {
